@@ -91,7 +91,7 @@ public class LightSensorUtils{
         if (mSensorManager != null){
             Sensor sensor = mSensorManager.getDefaultSensor(Sensor.TYPE_LIGHT);
             if (sensor != null && mIsContains) {
-                mSensorManager.registerListener(mSensorEventListener, sensor, SensorManager.SENSOR_DELAY_FASTEST);
+                mSensorManager.registerListener(mSensorEventListener, sensor, SensorManager.SENSOR_DELAY_NORMAL);
             }
         }
 
@@ -104,44 +104,10 @@ public class LightSensorUtils{
 
     }
 
-//    private int getBrightString(float value) {
-//        if (value >= LIGHT_SUNLIGHT_MAX) {
-//            currentMode = 8 ;
-//            return currentMode;
-//        } else if (value > LIGHT_SUNLIGHT) {
-//            currentMode = 7 ;
-//            return currentMode;
-//        } else if (value > LIGHT_SHADE) {
-//            currentMode = 6 ;
-//            return currentMode;
-//        } else if (value > LIGHT_OVERCAST) {
-//            currentMode = 5 ;
-//            return currentMode;
-//        } else if (value > LIGHT_SUNRISE) {
-//            currentMode = 4 ;
-//            return currentMode;
-//        } else if (value > LIGHT_CLOUDY) {
-//            currentMode = 3 ;
-//            return currentMode;
-//        } else if (value > LIGHT_FULLMOON) {
-//            currentMode = 2 ;
-//            return currentMode;
-//        } else if (value > LIGHT_NO_MOON) {
-//            currentMode = 1 ;
-//            return currentMode;
-//        } else {
-//            currentMode = -1 ;
-//            return currentMode;
-//        }
-//    }
-
-
-
-
     private final SensorEventListener mSensorEventListener = new SensorEventListener() {
 
         /*  onSensorChanged()在传感器数值发生变化已经注册监听器时调用，其更新频率就是注册中的参数三。
-        对于光传感器，有效数值存放在values[0]中的，单位为SI lunx。
+        对于光传感器，有效数值存放在values[0]中的，单位为SI lux。
         光传感器通常位于上方（一般靠左侧）， 除了前置摄像头外还有一个孔，一般就是它。遮盖会触发onSensorChanged()  */
         @Override
         public void onSensorChanged(SensorEvent event) {
