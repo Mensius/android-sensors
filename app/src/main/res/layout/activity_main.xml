@@ -15,7 +15,7 @@
         android:layout_gravity="center"
         android:textSize="22sp"
         android:textAlignment="center"
-        tools:text="Lux: 100"
+        tools:text="Illumination: 100 lux"
         />
 
 </FrameLayout>

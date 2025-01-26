@@ -1,4 +1,4 @@
 <resources>
     <string name="app_name">Sensors</string>
-    <string name="lux">"Lux: %.0f"</string>
+    <string name="illuminance">"Illuminance: %.0f lux"</string>
 </resources>
