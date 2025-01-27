@@ -4,20 +4,20 @@ import android.content.Context
 import android.hardware.Sensor
 import android.hardware.SensorEvent
 
-class AccelSensorHelper(context: Context?) : BaseSensorHelper() {
+class GyroSensorHelper(context: Context?) : BaseSensorHelper() {
 
     init {
         super.init(context, SENSOR_TYPE)
     }
     companion object {
-        const val SENSOR_TYPE: Int = Sensor.TYPE_ACCELEROMETER
+        const val SENSOR_TYPE: Int = Sensor.TYPE_GYROSCOPE
     }
 
     override fun handleSensorValueChanged(event: SensorEvent) {
         mSensorValueListener?.invoke(mapOf(
-            SensorConstants.ACC_X to event.values[0],
-            SensorConstants.ACC_Y to event.values[1],
-            SensorConstants.ACC_Z to event.values[2]
+            SensorConstants.GYRO_X to event.values[0],
+            SensorConstants.GYRO_Y to event.values[1],
+            SensorConstants.GYRO_Z to event.values[2]
         ))
     }
 

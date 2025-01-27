@@ -8,7 +8,7 @@ import android.hardware.SensorManager
 import android.util.Log
 import com.mty.sensors.helpers.SensorConstants.NO_SENSOR
 
-abstract class SensorHelper {
+abstract class BaseSensorHelper {
 
     private lateinit var mSensorManager: SensorManager
     private var mHasSensor = false

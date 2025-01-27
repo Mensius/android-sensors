@@ -1,13 +1,12 @@
 package com.mty.sensors.activities
 
 import android.os.Bundle
-import com.mty.sensors.helpers.SensorConstants
-import com.mty.sensors.helpers.SensorHelper
+import com.mty.sensors.helpers.BaseSensorHelper
 import com.mty.sensors.helpers.SensorHelperFactory
 
 abstract class BaseSensorActivity : BaseActivity() {
 
-    protected var mSensorHelper: SensorHelper? = null
+    protected var mSensorHelper: BaseSensorHelper? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)

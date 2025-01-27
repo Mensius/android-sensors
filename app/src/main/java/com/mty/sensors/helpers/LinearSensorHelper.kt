@@ -4,20 +4,20 @@ import android.content.Context
 import android.hardware.Sensor
 import android.hardware.SensorEvent
 
-class AccelSensorHelper(context: Context?) : BaseSensorHelper() {
+class LinearSensorHelper(context: Context?) : BaseSensorHelper() {
 
     init {
         super.init(context, SENSOR_TYPE)
     }
     companion object {
-        const val SENSOR_TYPE: Int = Sensor.TYPE_ACCELEROMETER
+        const val SENSOR_TYPE: Int = Sensor.TYPE_LINEAR_ACCELERATION
     }
 
     override fun handleSensorValueChanged(event: SensorEvent) {
         mSensorValueListener?.invoke(mapOf(
-            SensorConstants.ACC_X to event.values[0],
-            SensorConstants.ACC_Y to event.values[1],
-            SensorConstants.ACC_Z to event.values[2]
+            SensorConstants.LINEAR_ACC_X to event.values[0],
+            SensorConstants.LINEAR_ACC_Y to event.values[1],
+            SensorConstants.LINEAR_ACC_Z to event.values[2]
         ))
     }
 
