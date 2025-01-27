@@ -8,7 +8,7 @@ import android.hardware.SensorManager
 import android.util.Log
 import com.mty.sensors.helpers.SensorConstants.NO_SENSOR
 
-abstract class SensorHelper(context: Context?) {
+abstract class SensorHelper {
 
     private lateinit var mSensorManager: SensorManager
     private var mHasSensor = false
@@ -18,7 +18,7 @@ abstract class SensorHelper(context: Context?) {
     fun init(context: Context?, sensorType: Int = NO_SENSOR) {
         mSensorManager = context?.getSystemService(Context.SENSOR_SERVICE) as SensorManager
         mSensorType = sensorType
-        mHasSensor = mSensorManager.getSensorList(Sensor.TYPE_ALL) ?.any { it.type == mSensorType } ?: false
+        mHasSensor = mSensorManager.getDefaultSensor(mSensorType) != null
     }
 
     fun setSensorValueListener(listener: ISensorValueListener) {
@@ -64,11 +64,6 @@ abstract class SensorHelper(context: Context?) {
 
     companion object {
         private const val TAG = "SensorHelper"
-        private const val SENSOR_TYPE_NO_SENSOR = -1
-    }
-
-    init {
-        init(context, SENSOR_TYPE_NO_SENSOR)
     }
 
 }

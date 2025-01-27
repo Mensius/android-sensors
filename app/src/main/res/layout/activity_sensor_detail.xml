@@ -3,15 +3,18 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity">
+    tools:context=".activities.LightSensorActivity">
 
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/sensor_list"
+    <TextView
+        android:id="@+id/sensor_values"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:textSize="22sp"
+        android:paddingStart="32dp"
+        tools:text="Illumination: 100 lux"
         />
 
 </FrameLayout>

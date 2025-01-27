@@ -5,7 +5,7 @@ import android.hardware.Sensor
 import android.hardware.SensorEvent
 import com.mty.sensors.helpers.SensorConstants.ILLUMINANCE
 
-class LightSensorHelper(context: Context?) : SensorHelper(context) {
+class LightSensorHelper(context: Context?) : SensorHelper() {
 
     init {
         super.init(context, SENSOR_TYPE)
